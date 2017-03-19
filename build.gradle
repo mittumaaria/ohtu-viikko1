@@ -30,10 +30,19 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'ohtu.ohtuvarasto.Main'
 
+<<<<<<< HEAD
 // jar -tiedosto, joka paketoi projekstin käännetyn koodin yhdeksi tiedostoksi, joka voidaan suorittaa millä tahansa koneella, johon on asennettu Java. 
+=======
+// jar -tiedosto, joka paketoi projekstin käännetyn koodin yhdeksi tiedostoksi, 
+//joka voidaan suorittaa millä tahansa koneella, johon on asennettu Java. 
+>>>>>>> 954ad708ec96bbe6a940062ea008c2fb245b9e79
 
 jar {
 	manifest {
 		attributes 'Main-Class': 'ohtu.ohtuvarasto.Main' 
 	} 
 }	
+<<<<<<< HEAD
+=======
+
+>>>>>>> 954ad708ec96bbe6a940062ea008c2fb245b9e79
