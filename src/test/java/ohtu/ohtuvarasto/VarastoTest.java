@@ -14,6 +14,36 @@ public class VarastoTest {
 
     Varasto varasto;
     double vertailuTarkkuus = 0.0001;
+    
+    @Test
+    public void kelvotonVarasto(){
+        varasto = new Varasto(-1);
+        assertEquals(0, varasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(0, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void kuormitus(){
+        varasto = new Varasto(10,5);
+        assertEquals(10, varasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(5, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void kuormitus2(){
+        varasto = new Varasto(-1,-5);
+        assertEquals(0, varasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(0, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+    public void kuormitus3(){
+        varasto = new Varasto(5,15);
+        assertEquals(5, varasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(0, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
 
     @Before
     public void setUp() {
@@ -98,7 +128,14 @@ public class VarastoTest {
         varasto.otaVarastosta(12);
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
+    
+    @Test
+    public void String(){
+        varasto.toString();
+        assertEquals(0, varasto.getSaldo(),vertailuTarkkuus);
+        assertEquals(10, varasto.paljonkoMahtuu(),vertailuTarkkuus);
+    }
+    
 
-	
 
 }
