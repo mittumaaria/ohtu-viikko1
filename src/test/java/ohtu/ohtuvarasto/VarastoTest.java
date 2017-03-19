@@ -65,4 +65,40 @@ public class VarastoTest {
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
 
+    @Test
+    public void lisataanLiikaa(){
+        varasto.lisaaVarastoon(12);
+        
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);        
+    }
+    
+    @Test
+    public void lisataanNegatiivinenMaara(){
+        varasto.lisaaVarastoon(-12);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void ottaaNegatiivisenMaaran(){
+        varasto.lisaaVarastoon(5);
+        varasto.otaVarastosta(-12);
+        // varaston saldo ei muutu.
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void ottaaEnemman(){
+        varasto.lisaaVarastoon(10);
+        double saatu = varasto.otaVarastosta(12);
+        assertEquals(10, saatu, vertailuTarkkuus);
+    }
+    
+    @Test
+    public void ottaaEnemmanSaldo(){
+        varasto.otaVarastosta(12);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+	
+
 }
